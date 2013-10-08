@@ -1,4 +1,4 @@
-
+# Most of this code is verbatim from pg 73 in learn to program
 M = 'land'
 o = 'water'
 
@@ -17,9 +17,11 @@ def land_size world, x, y
 	end
 
 size = 1
-world [y][x] = 'counted land'
 
-0 = world [y][x].to_i if world [y][x].nil?
+land_size(world, x, y) = 0 if land_size(world, x, y).nil?
+
+world[y][x] = 'counted land'
+
 
 size = size + land_size(world, x-1, y-1)
 size = size + land_size(world, x, y-1)
@@ -33,4 +35,4 @@ size
 
 end
 
-puts land_size(sidra, 7, 7)
+puts land_size(sidra, 4, 5)
