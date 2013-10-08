@@ -14,8 +14,18 @@ sidra = [[M,M,M,o,o,o,o,o,o],
 def land_size world, x, y
 	if world[y][x] != 'land'
 		return 0
-	elsif world[y][x] || 0
-	end
+	#elsif world[y][x] || 0
+    elsif y > world.length - 1
+    	return 0
+    elsif x > world[0].length - 1
+    	return 0
+    elsif y < 0
+        return 0
+    elsif x < 0
+    	return 0
+    end
+    	
+
 
 
 size = 1
@@ -34,4 +44,4 @@ size = size + land_size(world, x+1, y+1)
 size
 
 end
-puts land_size(sidra, 0, 0)
+puts land_size(sidra, 1, 1)
